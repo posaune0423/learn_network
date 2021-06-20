@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import networkx as nx
+import pprint
 
 G = nx.DiGraph()
 pos = {
@@ -18,5 +19,5 @@ G.add_edges_from(E)
 # plt.show()
 
 eigen_centers = nx.eigenvector_centrality_numpy(G)
-print(eigen_centers)
+pprint.pprint(sorted(eigen_centers.items(), key=lambda x: x[1], reverse=True))
 
